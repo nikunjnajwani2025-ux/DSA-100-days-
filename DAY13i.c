@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 int main() {
-    int r, c;
+    int r, c,i,j;
     printf("Enter rows and columns: ");
     scanf("%d %d", &r, &c);
 
     int a[r][c];
 
     printf("Enter matrix elements:\n");
-    for(int i = 0; i < r; i=i+1) {
-        for(int j = 0; j < c; j=j+1) {
+    for(i = 0; i < r; i=i+1) {
+        for(j = 0; j < c; j=j+1) {
             scanf("%d", &a[i][j]);
         }
     }
@@ -22,25 +22,25 @@ int main() {
     while (top <= bottom && left <= right) {
 
        
-        for (int j = left; j <= right; j=j+1)
+        for (j = left; j <= right; j=j+1)
             printf("%d ", a[top][j]);
         t=t+1;
 
        
-        for (int i = top; i <= bottom; i=i+1)
+        for (i = top; i <= bottom; i=i+1)
             printf("%d ", a[i][right]);
         r=r-1;
 
         
         if (top <= bottom) {
-            for (int j = right; j >= left; j=j-1)
+            for (j = right; j >= left; j=j-1)
                 printf("%d ", a[bottom][j]);
             b=b-1;
         }
 
        
         if (left <= right) {
-            for (int i = bottom; i >= top; i=i-1)
+            for (i = bottom; i >= top; i=i-1)
                 printf("%d ", a[i][left]);
             l=l+1;
         }
